@@ -126,22 +126,23 @@ const Products = (props) => {
       </li>
     );
   });
+
   let cartList = cart.map((item, index) => {
     return (
       <Card key={index}>
         <Card.Header>
-          <Accordion.Toggle as={Button} variant="link" eventKey={1 + index}>
+          <Accordion as={Button} variant="link" eventKey={1 + index}>
             {item.name}
-          </Accordion.Toggle>
+          </Accordion>
         </Card.Header>
-        <Accordion.Collapse
+        <Accordion
           onClick={() => deleteCartItem(index)}
           eventKey={1 + index}
         >
           <Card.Body>
             $ {item.cost} from {item.country}
           </Card.Body>
-        </Accordion.Collapse>
+        </Accordion>
       </Card>
     );
   });
