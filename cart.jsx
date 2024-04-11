@@ -131,9 +131,9 @@ const Products = (props) => {
   const photos = ["apple.png", "orange.png", "beans.png", "cabbage.png"];
 
   let list = items.map((item, index) => {
-    //let n = index + 1049;
+    //let n = index + Math.floor(1024*Math.random());
     //let url = "https://picsum.photos/id/" + n + "/50/50";
-
+    
     return (
       <li key={index}>
         <Image src={photos[index % 4]} width={70} roundedCircle></Image>
