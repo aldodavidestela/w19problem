@@ -147,21 +147,19 @@ const Products = (props) => {
 
   let cartList = cart.map((item, index) => {
     return (
-      <Card key={index}>
-        <Card.Header id={"head"+(1+index)}>
-          <h5 className="mb-0">
-            <button className="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target={"#clps"+(1+index)} aria-expanded="true" aria-controls={"clps"+(1+index)}>
-              {item.name}
-            </button>
-          </h5>
-        </Card.Header>
-
-        <div id={"clps"+(1+index)} className="collapse" aria-labelledby={"head"+(1+index)} data-parent="#accordionExample" onClick={() => deleteCartItem(index, item.name)}>
-          <Card.Body>
-          $ {item.cost} from {item.country}
-          </Card.Body>
+      <div className="accordion-item" key={index}>
+        <div className="accordion-header">
+          <div className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={"#clps"+(1+index)} aria-expanded="false" aria-controls={"clps"+(1+index)}>
+            {item.name}
+          </div>
         </div>
-      </Card>
+
+        <div id={"clps"+(1+index)} className="accordion-collapse collapse" data-bs-parent="#accordionExample" onClick={() => deleteCartItem(index, item.name)}>
+          <div className="accordion-body">
+          $ {item.cost} from {item.country}
+          </div>
+        </div>
+      </div>
     );
   });
 
