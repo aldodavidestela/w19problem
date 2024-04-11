@@ -206,21 +206,6 @@ const Products = (props) => {
   return (
     <Container>
       <Row>
-        <Col>
-          <h1>Product List</h1>
-          <ul style={{ listStyleType: "none" }}>{list}</ul>
-        </Col>
-        <Col>
-          <h1>Cart Contents</h1>
-          <Accordion id="accordionExample">{cartList}</Accordion>
-        </Col>
-        <Col>
-          <h1>CheckOut </h1>
-          <Button onClick={checkOut}>CheckOut $ {finalList().total}</Button>
-          <div> {finalList().total > 0 && finalList().final} </div>
-        </Col>
-      </Row>
-      <Row>
         <form
           onSubmit={(event) => {
             console.log(`Restock called on ${query}`);
@@ -235,6 +220,25 @@ const Products = (props) => {
           />
           <button type="submit">ReStock Products</button>
         </form>
+        <hr />
+      </Row>
+      <Row>
+        <Col>
+          <h1>Product List</h1>
+          <hr />
+          <ul style={{ listStyleType: "none" }}>{list}</ul>
+        </Col>
+        <Col>
+          <h1>Cart Contents</h1>
+          <hr />
+          <Accordion id="accordionExample">{cartList}</Accordion>
+        </Col>
+        <Col>
+          <h1>CheckOut </h1>
+          <hr />
+          <Button onClick={checkOut}>CheckOut $ {finalList().total}</Button>
+          <div> {finalList().total > 0 && finalList().final} </div>
+        </Col>
       </Row>
     </Container>
   );
