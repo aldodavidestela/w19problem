@@ -216,6 +216,7 @@ const Products = (props) => {
           <input
             type="text"
             value={query}
+            style={{width: '300px'}}
             onChange={(event) => setQuery(event.target.value)}
           />
           <button type="submit">ReStock Products</button>
